@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  background-color: #f0f0f0;
+}
+
+.game-container {
+  width: 600px;
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.control-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.control-row label {
+  width: 60px;
+}
+
+.board {
+  width: 100%;
+  height: 500px;
+  border: 2px solid black;
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+.circle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #ff4d4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: white;
+  font-weight: bold;
+  user-select: none;
+  transition: opacity 2s, background 0.3s;
+  z-index: 10;
+}
+
+.circle.cleared {
+  background: #ff4d4d;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.status-msg {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.status-msg.success { color: green; }
+.status-msg.error { color: red; }
